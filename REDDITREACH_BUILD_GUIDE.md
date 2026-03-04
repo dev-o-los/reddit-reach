@@ -108,10 +108,9 @@ User lands on homepage
 
 ### AI
 
-| Technology            | Purpose                                            |
-| --------------------- | -------------------------------------------------- |
-| Google Gemini 1.5 Pro | Product analysis, thread scoring, reply generation |
-| @google/generative-ai | Official Gemini SDK                                |
+| Technology     | Purpose                                            |
+| -------------- | -------------------------------------------------- |
+| Openrouter api | Product analysis, thread scoring, reply generation |
 
 ### Payments
 
@@ -282,8 +281,8 @@ NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 
-# ─── Google Gemini AI ────────────────────────────────────
-GEMINI_API_KEY=
+# ─── OPEN ROUTER AI ────────────────────────────────────
+OPENROUTER_API_KEY=
 
 # ─── Dodo Payments ───────────────────────────────────────
 DODO_PAYMENTS_API_KEY=
@@ -310,7 +309,7 @@ NEXT_PUBLIC_APP_NAME=RedditReach
 Run this command exactly:
 
 ```bash
-pnpx create-next-app@latest redditreach \
+npx create-next-app@latest redditreach \
   --typescript \
   --tailwind \
   --eslint \
@@ -324,18 +323,18 @@ cd redditreach
 
 ```bash
 # ── shadcn/ui setup ──
-pnpx shadcn@latest init
+npx shadcn@latest init
 # When prompted: New York style, Zinc base color, CSS variables YES
 
 # ── shadcn/ui components ──
-pnpx shadcn@latest add button card input label badge dialog sheet tabs \
+npx shadcn@latest add button card input label badge dialog sheet tabs \
   progress toast skeleton separator avatar dropdown-menu popover \
   tooltip command select textarea switch alert form
 
 # ── Origin UI ──
 # Origin UI works as additional shadcn-compatible components
 # Install via their CLI or copy components as needed:
-pnpx shadcn@latest add "https://originui.com/r/comp-1.json"
+npx shadcn@latest add "https://originui.com/r/comp-1.json"
 # Note: Install these specific Origin UI components:
 # - Animated number counter
 # - Gradient cards
@@ -343,21 +342,21 @@ pnpx shadcn@latest add "https://originui.com/r/comp-1.json"
 # - Pricing table
 
 # ── Core packages ──
-pnpm install @supabase/supabase-js @supabase/ssr
-pnpm install @google/generative-ai
-pnpm install @dodopayments/node
-pnpm install @tanstack/react-query @tanstack/react-query-devtools
-pnpm install zustand immer
-pnpm install react-hook-form @hookform/resolvers zod
-pnpm install axios cheerio
-pnpm install @upstash/redis @upstash/ratelimit
-pnpm install framer-motion
-pnpm install lucide-react
-pnpm install date-fns
-pnpm install react-hot-toast
-pnpm install next-themes
-pnpm install clsx tailwind-merge
-pnpm install @radix-ui/react-icons
+npm install @supabase/supabase-js @supabase/ssr
+npm install @google/generative-ai
+npm install @dodopayments/node
+npm install @tanstack/react-query @tanstack/react-query-devtools
+npm install zustand immer
+npm install react-hook-form @hookform/resolvers zod
+npm install axios cheerio
+npm install @upstash/redis @upstash/ratelimit
+npm install framer-motion
+npm install lucide-react
+npm install date-fns
+npm install react-hot-toast
+npm install next-themes
+npm install clsx tailwind-merge
+npm install @radix-ui/react-icons
 ```
 
 ### Task 1.3 — Configure `tailwind.config.ts`
@@ -708,8 +707,8 @@ export const PLAN_LIMITS: Record<string, number> = {
 
 ### ✅ Phase 1 Checkpoint
 
-- [ ] `pnpx create-next-app` ran successfully
-- [ ] All pnpm packages installed without errors
+- [ ] `npx create-next-app` ran successfully
+- [ ] All npm packages installed without errors
 - [ ] `types/index.ts` created with all interfaces
 - [ ] `lib/utils.ts` created
 - [ ] `tailwind.config.ts` configured
@@ -3018,7 +3017,7 @@ Before deploying, verify ALL env vars are set in Vercel:
 
 ```bash
 # Install Vercel CLI
-pnpm i -g vercel
+npm i -g vercel
 
 # Deploy
 vercel --prod
@@ -3129,9 +3128,9 @@ Code/Tags:  "JetBrains Mono" — for subreddit names, scores
 
 2. **Complete phases in order.** Don't start Phase 5 (API Routes) before Phase 4 (Core Libraries) is done.
 
-3. **Test incrementally.** After each phase, run `pnpm run dev` and verify nothing is broken before proceeding.
+3. **Test incrementally.** After each phase, run `npm run dev` and verify nothing is broken before proceeding.
 
-4. **Keep TypeScript strict.** Run `pnpx tsc --noEmit` after each phase and fix all type errors before moving on.
+4. **Keep TypeScript strict.** Run `npx tsc --noEmit` after each phase and fix all type errors before moving on.
 
 5. **Handle loading and error states for every async operation.** Never leave a component without a loading state.
 
